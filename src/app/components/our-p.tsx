@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function OurProducts() {
     return (
       <div
-        className={`font-inter flex w-full flex-col gap-y-[74px] pt-4 capitalize tracking-[0px] text-indigo-950 `}
+        className={`font-inter flex w-full flex-col gap-y-[74px] pt-4 py-32 capitalize tracking-[0px] text-indigo-950 `}
       >
         <div className="flex items-center justify-center pr-px">
           <div className="text-center text-[32px] font-semibold leading-[1.1]">
