@@ -1,7 +1,7 @@
 export default function TopCategories() {
     return (
       <div
-        className={`font-inter flex w-full flex-col items-start gap-y-11 pt-[4.5px] capitalize leading-[1.1] tracking-[0px] px-24`}
+        className={`font-inter flex w-full flex-col items-start gap-y-11 pt-[4.5px] capitalize leading-[1.1] tracking-[0px] py-20 px-24`}
       >
         <div className="text-[32px] font-semibold leading-[1.1] text-indigo-950">
           Top categories

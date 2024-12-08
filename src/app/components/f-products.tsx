@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function FeaturedProducts() {
     return (
       <div
-        className={`font-inter flex w-full flex-col items-start gap-y-11 space-x-5 pt-[4.5px] capitalize tracking-[0px]  px-20`}
+        className={`font-inter flex w-full flex-col items-start gap-y-11 space-x-5 pt-[4.5px] capitalize tracking-[0px] py-20 px-20`}
       >
         <div className="text-[32px] font-semibold leading-[1.1]  text-indigo-950">
           Featured Products

@@ -18,11 +18,11 @@ export default function Footer() {
               Cras egestas purus.
             </p>
             <div className="flex gap-4">
-              <Image src={"/img/fLogo.png"} width={38} height={38} alt="Facebook" />
+              <Image src={"/img/flogo.png"} width={38} height={38} alt="Facebook" />
               <Image src={"/img/tLogo.png"} width={38} height={38} alt="Twitter" />
-              <Image src={"/img/iLogo.png"} width={38} height={38} alt="Instagram" />
-              <Image src={"/img/pLogo.png"} width={38} height={38} alt="Pinterest" />
-              <Image src={"/img/yLogo.png"} width={38} height={38} alt="YouTube" />
+              <Image src={"/img/ilogo.png"} width={38} height={38} alt="Instagram" />
+              <Image src={"/img/plogo.png"} width={38} height={38} alt="Pinterest" />
+              <Image src={"/img/ylogo.png"} width={38} height={38} alt="YouTube" />
             </div>
           </div>
 

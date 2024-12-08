@@ -1,7 +1,7 @@
 export default function CompanyLogo() {
     return (
       <div
-        className={`px-10 flex w-full flex-wrap items-center gap-y-8 min-[1311px]:flex-nowrap `}
+        className={`px-10 py-20 flex w-full flex-wrap items-center gap-y-8 min-[1311px]:flex-nowrap `}
       >
         <div className="bg-logo h-[87px] w-[85px] flex-shrink-0 bg-contain bg-center bg-no-repeat" />
         <img
