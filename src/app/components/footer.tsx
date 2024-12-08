@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="flex flex-col space-y-7 max-w-xs">
             <div className="flex items-center gap-2">
-              <Image src={"/img/Logo-icon.png"} width={40} height={40} alt="" />
+              <Image src={"/img/Logoicon.png"} width={40} height={40} alt="" />
               <span className="text-2xl font-semibold">Comforty</span>
             </div>
             <p className="mt-4 text-sm text-gray-600">
