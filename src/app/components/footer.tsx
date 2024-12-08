@@ -19,7 +19,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <Image src={"/img/flogo.png"} width={38} height={38} alt="Facebook" />
-              <Image src={"/img/tLogo.png"} width={38} height={38} alt="Twitter" />
+              <Image src={"/img/tlogo.png"} width={38} height={38} alt="Twitter" />
               <Image src={"/img/ilogo.png"} width={38} height={38} alt="Instagram" />
               <Image src={"/img/plogo.png"} width={38} height={38} alt="Pinterest" />
               <Image src={"/img/ylogo.png"} width={38} height={38} alt="YouTube" />
@@ -74,7 +74,7 @@ export default function Footer() {
             © 2021 Comforty - Designed & Developed by <span className="text-indigo-500">Zakirsoft</span>
           </p>
           <div className="flex items-center justify-center opacity-50">
-            <Image src={"/img/logos.png"} width={227} height={27} alt="Payment Logos" />
+            <Image src={"/img/Logos.png"} width={227} height={27} alt="Payment Logos" />
           </div>
         </div>
       </div>
