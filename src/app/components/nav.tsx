@@ -32,7 +32,7 @@ export default function Navigation() {
       {/* Main Navigation */}
       <div className="flex flex-wrap items-center justify-between gap-y-4 bg-gray-100 px-6 py-5 font-medium text-indigo-950 sm:px-10 lg:flex-nowrap lg:px-32">
         <div className="flex items-center justify-center gap-x-2">
-          <Image src={"/img/lo.png"} width={40} height={40} alt="Logo" />
+        <Image src={"/img/lo.png"} width={40} height={40} alt="logo" />
           <div className="text-[22px] leading-[1.2] sm:text-[26px]">Comforty</div>
         </div>
         <Link href="../cart">
