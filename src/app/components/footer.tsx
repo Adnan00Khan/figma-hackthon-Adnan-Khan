@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-export default function Footer({ className = "" }: FooterProps) {
+export default function Footer() {
   return (
-    <footer className={`w-full tracking-normal text-indigo-950 ${className}`}>
+    <footer className={`w-full tracking-normal text-indigo-950 `}>
       <div className="font-inter bg-white pb-10 pt-10 shadow-inner">
         <div className="flex flex-wrap justify-between gap-12 px-6 sm:px-10 lg:px-32">
           {/* Company Info */}
@@ -82,6 +82,3 @@ export default function Footer({ className = "" }: FooterProps) {
   );
 }
 
-interface FooterProps {
-  className?: string;
-}

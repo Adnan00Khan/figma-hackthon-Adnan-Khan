@@ -1,6 +1,6 @@
-export default function HotCategory({ className = "" }: HotCategoryProps) {
+export default function HotCategory() {
     return (
-      <div className={`flex w-full flex-col items-end ${className}`}>
+      <div className={`flex w-full flex-col items-end `}>
         <div className="flex w-full flex-grow flex-wrap items-center justify-center min-[1310px]:flex-nowrap" >
           <div className="relative h-[648px] w-[52px] flex-shrink-0">
             <div className="font-roboto absolute left-0 top-[648px] flex h-[52px] w-[648px] origin-top-left items-start justify-center text-center text-[34px] uppercase leading-[normal] tracking-[0px] [transform:rotate(-90deg)]" >
@@ -43,7 +43,4 @@ export default function HotCategory({ className = "" }: HotCategoryProps) {
     );
   }
   
-  interface HotCategoryProps {
-    className?: string;
-  }
-  
+ 

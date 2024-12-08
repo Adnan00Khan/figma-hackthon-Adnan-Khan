@@ -1,6 +1,6 @@
-export default function Header({ className = "" }: HeaderProps) {
+export default function Header() {
     return (
-      <div className={`flex w-full items-start ${className}`}>
+      <div className={`flex w-full items-start px-24 `}>
         <div className="flex h-full w-full flex-shrink-0 flex-col overflow-clip">
           <div className="font-inter relative flex w-[1740px] flex-grow flex-col items-start gap-y-6 rounded-b-[48px] bg-gray-100 pb-72 pl-[70px] pr-[1113px] pt-56 text-indigo-950">
             <img
@@ -43,7 +43,5 @@ export default function Header({ className = "" }: HeaderProps) {
     );
   }
   
-  interface HeaderProps {
-    className?: string;
-  }
+
   

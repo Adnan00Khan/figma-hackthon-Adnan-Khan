@@ -1,9 +1,7 @@
-export default function TopCategories({
-    className = "",
-  }: TopCategoriesProps) {
+export default function TopCategories() {
     return (
       <div
-        className={`font-inter flex w-full flex-col items-start gap-y-11 pt-[4.5px] capitalize leading-[1.1] tracking-[0px] ${className}`}
+        className={`font-inter flex w-full flex-col items-start gap-y-11 pt-[4.5px] capitalize leading-[1.1] tracking-[0px] px-24`}
       >
         <div className="text-[32px] font-semibold leading-[1.1] text-indigo-950">
           Top categories
@@ -56,9 +54,5 @@ export default function TopCategories({
         </div>
       </div>
     );
-  }
-  
-  interface TopCategoriesProps {
-    className?: string;
   }
   

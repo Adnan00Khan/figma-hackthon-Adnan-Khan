@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-export default function FeaturedProducts({
-    className = "",
-  }: FeaturedProductsProps) {
+export default function FeaturedProducts() {
     return (
       <div
-        className={`font-inter flex w-full flex-col items-start gap-y-11 space-x-5 pt-[4.5px] capitalize tracking-[0px] ${className}`}
+        className={`font-inter flex w-full flex-col items-start gap-y-11 space-x-5 pt-[4.5px] capitalize tracking-[0px]  px-20`}
       >
         <div className="text-[32px] font-semibold leading-[1.1]  text-indigo-950">
           Featured Products
@@ -118,7 +116,4 @@ export default function FeaturedProducts({
     );
   }
   
-  interface FeaturedProductsProps {
-    className?: string;
-  }
   

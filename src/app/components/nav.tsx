@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Navigation({ className = "" }: NavigationProps) {
+export default function Navigation() {
   return (
     <div
-      className={`font-inter w-full bg-white capitalize leading-[1.1] tracking-[0px] ${className}`}
+      className={`font-inter w-full bg-white capitalize leading-[1.1] tracking-[0px]`}
     >
       {/* Top Banner */}
       <div className="flex flex-wrap items-center justify-between bg-indigo-950 px-6 py-3 text-[13px] text-white sm:px-10 lg:px-32">
@@ -106,6 +106,4 @@ export default function Navigation({ className = "" }: NavigationProps) {
   );
 }
 
-interface NavigationProps {
-  className?: string;
-}
+

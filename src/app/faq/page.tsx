@@ -1,7 +1,7 @@
-export default function FAQ({ className = "" }: FAQProps) {
+export default function FAQ() {
     return (
       <div
-        className={`p-8 lg:p-28 font-inter flex w-full flex-col items-center gap-y-5 leading-6 tracking-[0px] text-neutral-600 ${className}`}
+        className={`p-8 lg:p-28 font-inter flex w-full flex-col items-center gap-y-5 leading-6 tracking-[0px] text-neutral-600 `}
       >
         <div className="font-helvetica text-center text-4xl lg:text-5xl font-bold leading-[56px] text-neutral-800">
           Questions Looks Here
@@ -179,9 +179,5 @@ export default function FAQ({ className = "" }: FAQProps) {
         </div>
       </div>
     );
-  }
-  
-  interface FAQProps {
-    className?: string;
   }
   

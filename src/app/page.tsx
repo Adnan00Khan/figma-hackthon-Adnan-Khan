@@ -10,22 +10,22 @@ const Home: React.FC = () => {
   return (
     <div className="space-y-10">
       {/* Header Component */}
-      <Header className="px-10 md:px-32" />
+      <Header  />
 
       {/* Company Logo */}
-      <CompanyLogo className="md:px-14 px-5 p-12" />
+      <CompanyLogo  />
 
       {/* Featured Products */}
-      <FeaturedProducts className="md:px-20 px-5 p-24" />
+      <FeaturedProducts  />
 
       {/* Top Categories */}
-      <TopCategories className="md:px-24 px-5 p-24" />
+      <TopCategories  />
 
       {/* Hot Category */}
-      <HotCategory className="px-24 p-24" />
+      <HotCategory  />
 
       {/* Our Products */}
-      <OurProducts className="pb-36" />
+      <OurProducts  />
     </div>
   );
 };

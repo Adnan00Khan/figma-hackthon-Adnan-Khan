@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-export default function Group({ className = "" }: GroupProps) {
+export default function Group() {
   return (
-    <div className={`flex w-full flex-col ${className}`}>
+    <div className={`flex w-full flex-col `}>
       <div className="flex flex-grow flex-col items-center justify-end gap-y-[7px] bg-white px-8 pt-24 leading-[normal] tracking-[0px] sm:px-24 lg:px-48">
         <div className="flex items-center justify-center self-stretch pl-px">
           <div className="font-poppins text-center text-3xl sm:text-4xl font-semibold leading-[normal]">
@@ -153,6 +153,3 @@ export default function Group({ className = "" }: GroupProps) {
   );
 }
 
-interface GroupProps {
-  className?: string;
-}

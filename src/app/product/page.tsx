@@ -4,10 +4,10 @@ import Link from "next/link";
 
 const opens = Open_Sans({ subsets: ['latin'] });
 
-export default function Products({ className = "" }: ProductsProps) {
+export default function Products() {
   return (
     <div>
-      <div className={`font-inter flex w-full flex-col items-start gap-y-11 space-x-5 md:p-20 p-1 capitalize tracking-[0px] ${className}`}>
+      <div className={`font-inter flex w-full flex-col items-start gap-y-11 space-x-5 md:p-20 p-1 capitalize tracking-[0px]`}>
         <div className="text-[32px] font-semibold leading-[1.1] px-5 text-indigo-950">
           All Products
         </div>
@@ -361,6 +361,3 @@ export default function Products({ className = "" }: ProductsProps) {
   );
 }
 
-interface ProductsProps {
-  className?: string;
-}

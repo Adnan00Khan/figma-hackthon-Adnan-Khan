@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-export default function OurProducts({ className = "" }: OurProductsProps) {
+export default function OurProducts() {
     return (
       <div
-        className={`font-inter flex w-full flex-col gap-y-[74px] pt-4 capitalize tracking-[0px] text-indigo-950 ${className}`}
+        className={`font-inter flex w-full flex-col gap-y-[74px] pt-4 capitalize tracking-[0px] text-indigo-950 `}
       >
         <div className="flex items-center justify-center pr-px">
           <div className="text-center text-[32px] font-semibold leading-[1.1]">
@@ -222,7 +222,4 @@ export default function OurProducts({ className = "" }: OurProductsProps) {
     );
   }
   
-  interface OurProductsProps {
-    className?: string;
-  }
   

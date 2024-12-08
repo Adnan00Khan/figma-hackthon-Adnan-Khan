@@ -1,6 +1,6 @@
-export default function Frame({ className = "" }: FrameProps) {
+export default function Frame() {
   return (
-    <div className={`flex w-full px-4 py-8 lg:px-[104px] lg:py-[22px] ${className} space-x-11 pt-32`}>
+    <div className={`flex w-full px-4 py-8 lg:px-[104px] lg:py-[22px] space-x-11 pt-32`}>
       <div className="font-inter flex flex-grow flex-wrap items-start justify-center gap-x-8 gap-y-8 pb-32 pr-14 tracking-[0px] sm:flex-nowrap">
         <div className="self-stretch w-full lg:w-full">
           <div className="w-14 text-[22px] font-medium leading-[33px] text-neutral-950">
@@ -93,6 +93,3 @@ export default function Frame({ className = "" }: FrameProps) {
   );
 }
 
-interface FrameProps {
-className?: string;
-}
