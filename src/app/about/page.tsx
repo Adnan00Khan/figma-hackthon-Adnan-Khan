@@ -1,14 +1,12 @@
 // src/app/about/page.tsx
-
 import React from 'react';
 
 // 1. Export GroupProps as a named export (not default)
-export interface GroupProps {
+export type GroupProps = {
   className?: string;
-}
+};
 
-// 2. Default export the Group component
-const Group: React.FC<GroupProps> = ({ className = "" }) => {
+const About: React.FC<GroupProps> = ({ className = "" }) => {
   return (
     <div className={`flex w-full flex-col ${className}`}>
       {/* About Us Section */}
@@ -67,7 +65,7 @@ const Group: React.FC<GroupProps> = ({ className = "" }) => {
           {
             title: "Made by true artisans",
             description:
-              "Handmade crafted goods made with real passion and craftmanship",
+              "Handmade crafted goods made with real passion and craftsmanship",
             icon: (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -174,5 +172,8 @@ const Group: React.FC<GroupProps> = ({ className = "" }) => {
   );
 };
 
-// 3. Export Group as the default export
-export default Group;
+// 2. Export GroupProps as a named export using `export type`
+
+
+// 3. Export About as the default export
+export default About;
