@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-export default function Group({ className = "" }: GroupProps) {
+export default function Details() {
     return (
-        <div className={`flex w-full flex-col ${className} px-6 py-12 md:px-28`}>
+        <div className={`flex w-full flex-col px-6 py-12 md:px-28`}>
             <div className="flex flex-col-reverse md:flex-row items-start justify-center gap-x-24 px-4  gap-y-16 md:gap-y-28">
                 {/* Image Section */}
                 <img
@@ -161,6 +161,3 @@ export default function Group({ className = "" }: GroupProps) {
     );
 }
 
-interface GroupProps {
-    className?: string;
-}

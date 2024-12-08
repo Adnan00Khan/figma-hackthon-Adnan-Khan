@@ -2,13 +2,10 @@
 import React from 'react';
 
 // 1. Export GroupProps as a named export (not default)
-export type GroupProps = {
-  className?: string;
-};
 
-const About: React.FC<GroupProps> = ({ className = "" }) => {
+export default function About() {
   return (
-    <div className={`flex w-full flex-col ${className}`}>
+    <div className={`flex w-full flex-col `}>
       {/* About Us Section */}
       <div className="p-10 pt-20 flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-y-10 gap-x-7">
         {/* Text Content */}
@@ -176,4 +173,4 @@ const About: React.FC<GroupProps> = ({ className = "" }) => {
 
 
 // 3. Export About as the default export
-export default About;
+
