@@ -326,9 +326,9 @@ export default function Products() {
           </div></Link>
         </div>
         
-        <div className="font-roboto relative z-0 flex w-full flex-col items-center gap-y-8 bg-gray-100 px-10 py-24 text-center text-4xl font-medium capitalize leading-normal">
+        <div className="font-roboto relative z-0 flex w-full flex-col items-center gap-y-8 bg-gray-100 sm:px-10 px-5 py-24 text-center text-4xl font-medium capitalize leading-normal">
           {/* Header */}
-          <div className="text-[50px] font-semibold">Or subscribe to the newsletter</div>
+          <div className="sm:text-[50px] text-[30px] font-semibold">Or subscribe to the newsletter</div>
 
           {/* Email Subscription */}
           <div className="flex flex-col items-center gap-4 pt-16">
@@ -336,23 +336,23 @@ export default function Products() {
               <input
                 type="email"
                 placeholder="Email address..."
-                className="flex-1 w-[300px] sm:w-[400px] md:w-[500px] border-b-2 border-black bg-gray-100 px-4 py-2 text-sm text-black focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="flex-1 w-[250px] sm:w-[400px] md:w-[500px] border-b-2 border-black bg-gray-100 px-4 py-2 text-sm text-black focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
-              <button className={`${opens.className} bg-gray-100 px-6 py-2 text-sm font-normal text-black border-b-2 border-black`}>
+              <button className={`${opens.className} bg-gray-100 sm:px-6 px-3 py-2 sm:text-sm text-[10px] font-normal text-black border-b-2 border-black`}>
                 SUBMIT
               </button>
             </div>
           </div>
 
           {/* Instagram Section */}
-          <div className="mt-12 text-[50px] font-semibold">Follow products and discounts on Instagram</div>
+          <div className="mt-12 sm:text-[50px] text-[30px] font-semibold">Follow products and discounts on Instagram</div>
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {/* Instagram Images */}
             <img className="h-52 w-52 rounded-md object-cover" src="/img/top2.png" alt="Instagram Post 1" loading="lazy" />
             <img className="h-52 w-52 rounded-md object-cover" src="/img/top1.png" alt="Instagram Post 2" loading="lazy" />
             <img className="h-52 w-52 rounded-md object-cover" src="/img/p2.png" alt="Instagram Post 3" loading="lazy" />
             <img className="h-52 w-52 rounded-md object-cover" src="/img/p1.png" alt="Instagram Post 4" loading="lazy" />
-            <img className="h-48 w-48 rounded-md object-cover" src="/img/item1.png" alt="Instagram Post 5" loading="lazy" />
+            <img className="h-52 w-52 rounded-md object-cover" src="/img/item1.png" alt="Instagram Post 5" loading="lazy" />
             <img className="h-52 w-52 rounded-md object-cover" src="/img/top3.png" alt="Instagram Post 6" loading="lazy" />
           </div>
         </div>

@@ -3,12 +3,12 @@ import Link from "next/link";
 export default function FeaturedProducts() {
     return (
       <div
-        className={`font-inter flex w-full flex-col items-start gap-y-11 space-x-5 pt-[4.5px] capitalize tracking-[0px] py-20 px-20`}
+        className={`font-inter flex w-full flex-col items-start gap-y-11 space-x-5 pt-[4.5px] capitalize tracking-[0px] py-20 md:px-20 px-5`}
       >
         <div className="text-[32px] font-semibold leading-[1.1]  text-indigo-950">
           Featured Products
         </div>
-        <div className="flex flex-grow flex-wrap items-center justify-center gap-x-4 gap-y-6 leading-[1.3] min-[1910px]:flex-nowrap">
+        <div className="flex flex-grow flex-wrap items-center justify-center md:gap-x-4 gap-y-6 leading-[1.3] min-[1910px]:flex-nowrap">
           {/* Product 1 */}
           <Link href={'../detail'}>
           <div className="flex flex-col items-start gap-y-3.5 self-stretch">
