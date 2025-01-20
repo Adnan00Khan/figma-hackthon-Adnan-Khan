@@ -43,7 +43,7 @@ export default function OurProducts() {
 
   const handleAddToCart = (product: BlogData) => {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    const existingItem = cart.find((item: any) => item._id === product._id);
+    const existingItem = cart.find((item: BlogData) => item._id === product._id);
 
     if (existingItem) {
       // Update quantity if item already exists
@@ -74,7 +74,7 @@ export default function OurProducts() {
       </div>
 
       <div className="flex flex-grow flex-wrap items-center justify-center gap-x-4 gap-y-6 leading-[1.3] min-[1910px]:flex-nowrap">
-        {data.slice(0, 8).map((val, i) => (
+        {data.slice(0, 8).map((val) => (
           <div key={val._id}className="flex flex-col items-start gap-y-3.5 self-stretch">
             {/* Product Image and Details */}
             <Link

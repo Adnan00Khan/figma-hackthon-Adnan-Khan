@@ -47,7 +47,7 @@ export default function Products() {
  
   const handleAddToCart = (product: BlogData) => {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    const existingItem = cart.find((item: any) => item._id === product._id);
+    const existingItem = cart.find((item: BlogData) => item._id === product._id);
 
     if (existingItem) {
       // Update quantity if item already exists

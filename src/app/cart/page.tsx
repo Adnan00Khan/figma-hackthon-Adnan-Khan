@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 interface BlogData {
@@ -59,9 +60,9 @@ export default function Frame() {
           {cartItems.length === 0 ? (
             <div className="text-center py-10">
               <p className="text-gray-600">Your cart is empty.</p>
-              <a href="/" className="text-blue-600 underline hover:text-blue-800 mt-4 inline-block">
+              <Link href="/" className="text-blue-600 underline hover:text-blue-800 mt-4 inline-block">
                 Go back to shopping
-              </a>
+              </Link>
             </div>
           ) : (
             cartItems.map((item) => (
