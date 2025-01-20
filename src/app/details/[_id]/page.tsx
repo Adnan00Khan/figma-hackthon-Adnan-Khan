@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import { client } from '@/sanity/lib/client';
-import Detail from '@/app/detail/page';
+import React, { useEffect, useState } from "react";
+import { client } from "@/sanity/lib/client";
+import Detail from "@/app/detail/page";
 
-// Define types for the data and params
+// Define types for the data
 interface BlogData {
   title: string;
   imageUrl: string;
@@ -25,32 +25,35 @@ const Page: React.FC<PageProps> = ({ params }) => {
   const [slug, setSlug] = useState<string | null>(null);
 
   useEffect(() => {
-    // Unwrap the params Promise using React.use()
-    const getSlug = async () => {
-      const unwrappedParams = await params; // Wait for params to resolve
-      setSlug(unwrappedParams._id); // Set the slug after unwrapping
+    const unwrapParams = async () => {
+      try {
+        const resolvedParams = await params;
+        setSlug(resolvedParams._id); // Unwrap params and set slug
+      } catch (error) {
+        console.error("Error unwrapping params:", error);
+      }
     };
-    
-    getSlug();
+
+    unwrapParams();
   }, [params]);
 
   useEffect(() => {
-    if (!slug) return; // Wait for slug to be available
+    if (!slug) return; // Ensure slug is available before fetching data
 
     const fetchData = async () => {
       try {
-        const result = await client.fetch(`*[_type == 'products']{
-  title,
-    price,
-    inventory,
-    _id,
-    "imageUrl": image.asset->url,
-    description,
-    }`);
-        const blogData = result.find((item: BlogData) => item._id === slug);
-        setData(blogData || null);
+        const query = `*[_type == 'products' && _id == $id][0]{
+          title,
+          price,
+          _id,
+          "imageUrl": image.asset->url,
+          description
+        }`;
+        const result = await client.fetch(query, { id: slug });
+        setData(result || null); // Set fetched data or null if not found
       } catch (error) {
-        console.error('Error fetching blog data:', error);
+        console.error("Error fetching blog data:", error);
+        setData(null);
       } finally {
         setLoading(false);
       }
@@ -65,7 +68,6 @@ const Page: React.FC<PageProps> = ({ params }) => {
   return (
     <div>
       <Detail data={data} />
-      
     </div>
   );
 };
