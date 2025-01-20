@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client";
-import Detail from "@/app/detail/page";
+import {Detail} from "@/app/detail/page";
 
 // Define types for the data
-interface BlogData {
+interface BlogDetail {
   title: string;
   imageUrl: string;
   _id: string;
@@ -20,7 +20,7 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = ({ params }) => {
-  const [data, setData] = useState<BlogData | null>(null);
+  const [data, setData] = useState<BlogDetail | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [slug, setSlug] = useState<string | null>(null);
 
