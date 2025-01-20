@@ -19,7 +19,7 @@ interface PageProps {
   }>;
 }
 
-export default function Page({ params }: PageProps) {
+const Page: React.FC<PageProps> = ({ params }) => {
   const [data, setData] = useState<BlogDetail | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [slug, setSlug] = useState<string | null>(null);
@@ -63,4 +63,6 @@ export default function Page({ params }: PageProps) {
   if (!data) return <div>Product not found!</div>;
 
   return <Detail data={data} />;
-}
+};
+
+export default Page;
