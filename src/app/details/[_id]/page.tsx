@@ -1,9 +1,8 @@
 'use client';
 
-import Detail  from '@/app/detail/page';
+import Detail from '@/app/detail/page';
 import { client } from '@/sanity/lib/client';
-import React, { useEffect, useState } from 'react';
-
+import React, { use, useEffect, useState } from 'react';
 
 interface BlogData {
   title: string;
@@ -20,22 +19,13 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = ({ params }) => {
+  const unwrappedParams = use(params); // Use the `use` hook to unwrap the Promise
+  const { _id } = unwrappedParams;
+
   const [data, setData] = useState<BlogData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const [slug, setSlug] = useState<string | null>(null);
 
   useEffect(() => {
-    const getSlug = async () => {
-      const unwrappedParams = await params;
-      setSlug(unwrappedParams._id); // Set the slug after unwrapping
-    };
-
-    getSlug();
-  }, [params]);
-
-  useEffect(() => {
-    if (!slug) return;
-
     const fetchData = async () => {
       try {
         const result = await client.fetch(
@@ -46,9 +36,9 @@ const Page: React.FC<PageProps> = ({ params }) => {
             description,
             _id
           }[0]`,
-          { id: slug }
+          { id: _id }
         );
-        
+
         setData(result);
       } catch (error) {
         console.error('Error fetching product details:', error);
@@ -58,7 +48,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
     };
 
     fetchData();
-  }, [slug]);
+  }, [_id]);
 
   if (loading) return <div>Loading...</div>;
   if (!data) return <div>Product not found!</div>;
