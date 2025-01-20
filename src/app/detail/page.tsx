@@ -16,30 +16,22 @@ interface BlogDetail {
 interface DetailProps {
   data: BlogDetail;
 }
-interface BlogData {
-  title: string;
-  imageUrl: string;
-  _id: string;
-  price: number;
-  description: string;
-}
 
 const Detail: React.FC<DetailProps> = ({ data }) => {
-  const [data1, setData] = useState<BlogData[]>([]);
+  const [data1, setData] = useState<BlogDetail[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
 
-  // Fetch data on component mount
+  // Fetch additional products on component mount
   useEffect(() => {
     const fetchData = async () => {
       try {
         const result = await client.fetch(`*[_type == 'products']{
           title,
           price,
-          inventory,
           _id,
           "imageUrl": image.asset->url,
-          description,
+          description
         }`);
         setData(result); // Store the fetched data in state
       } catch (error) {
@@ -51,28 +43,24 @@ const Detail: React.FC<DetailProps> = ({ data }) => {
   }, []);
 
   // Add to Cart Functionality
-  const handleAddToCart = (product: BlogData) => {
+  const handleAddToCart = (product: BlogDetail) => {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
     const existingItem = cart.find((item: BlogDetail) => item._id === product._id);
 
     if (existingItem) {
-      // Update quantity if item already exists
       existingItem.quantity += 1;
     } else {
-      // Add new item to the cart
       cart.push({ ...product, quantity: 1 });
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-        // Show modal with a message
-        setModalMessage(`${product.title} has been added to your cart.`);
-        setShowModal(true); // Show the modal
-      };
-    
-      const closeModal = () => {
-        setShowModal(false); 
+    setModalMessage(`${product.title} has been added to your cart.`);
+    setShowModal(true);
   };
 
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <div className="flex w-full flex-col px-6 py-12 md:px-28">
@@ -87,24 +75,17 @@ const Detail: React.FC<DetailProps> = ({ data }) => {
 
         {/* Text and Details Section */}
         <div className="font-inter flex flex-grow flex-col items-start gap-y-8 tracking-[0px] text-black max-w-[545px]">
-          {/* Title */}
           <div className="text-4xl md:text-[60px] font-bold capitalize leading-[1.1]">
             {data.title}
           </div>
-
-          {/* Price */}
           <div className="bg-[#1eabb0] px-4 py-2 text-center text-xl font-semibold text-white">
             ${data.price} USD
           </div>
-
-          {/* Description */}
           <div className="self-stretch pl-0.5 pt-7">
             <div className="text-xl md:text-[22px] text-[#272343] font-normal">
               {data.description}
             </div>
           </div>
-
-          {/* Add to Cart Button */}
           <div className="flex items-center mt-6">
             <div
               onClick={() => handleAddToCart(data)}
@@ -124,21 +105,19 @@ const Detail: React.FC<DetailProps> = ({ data }) => {
           <a href="../product">
             <div className="text-lg text-center">View all</div>
           </a>
-          {/* Divider Line */}
           <div className="h-0.5 bg-gray-400 w-full"></div>
         </div>
       </div>
 
       {/* Product Items Section */}
       <div className="pt-12 md:pt-20 flex flex-wrap items-center justify-center gap-x-2 pb-28 gap-y-6 md:gap-y-[26px] capitalize leading-[1.3] text-black">
-        {/* Product Card 1 */}
         {data1.slice(0, 5).map((val) => (
           <Link key={val._id} href={`../details/${val._id}`}>
             <div className="flex flex-col items-start gap-y-3.5 w-full md:w-[250px]">
               <div className="bg-image h-[270px] w-full md:w-[250px] rounded-md bg-cover bg-center">
                 <img
                   src={val.imageUrl}
-                  alt="Library Stool Chair"
+                  alt={val.title}
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -154,9 +133,7 @@ const Detail: React.FC<DetailProps> = ({ data }) => {
           </Link>
         ))}
       </div>
-      {showModal && (
-        <Modal message={modalMessage} onClose={closeModal} />
-      )}
+      {showModal && <Modal message={modalMessage} onClose={closeModal} />}
     </div>
   );
 };
