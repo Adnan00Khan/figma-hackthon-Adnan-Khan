@@ -1,9 +1,8 @@
-// src/app/detail/page.tsx
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import Detail  from '@/app/detail/page';
 import { client } from '@/sanity/lib/client';
-import DetailPage from '@/app/detail/page';
+import React, { useEffect, useState } from 'react';
 
 
 interface BlogDetail {
@@ -15,7 +14,9 @@ interface BlogDetail {
 }
 
 interface PageProps {
-  params: Promise<{ _id: string }>;
+  params: Promise<{
+    _id: string;
+  }>;
 }
 
 const Page: React.FC<PageProps> = ({ params }) => {
@@ -61,7 +62,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
   if (loading) return <div>Loading...</div>;
   if (!data) return <div>Product not found!</div>;
 
-  return <DetailPage data={data} />; // Pass data prop to Detail component
+  return <Detail data={data} />;
 };
 
 export default Page;

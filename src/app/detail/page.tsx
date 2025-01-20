@@ -132,7 +132,7 @@ const Detail: React.FC<DetailProps> = ({ data }) => {
       {/* Product Items Section */}
       <div className="pt-12 md:pt-20 flex flex-wrap items-center justify-center gap-x-2 pb-28 gap-y-6 md:gap-y-[26px] capitalize leading-[1.3] text-black">
         {/* Product Card 1 */}
-        {data1.slice(0, 5).map((val, i) => (
+        {data1.slice(0, 5).map((val) => (
           <Link key={val._id} href={`../details/${val._id}`}>
             <div className="flex flex-col items-start gap-y-3.5 w-full md:w-[250px]">
               <div className="bg-image h-[270px] w-full md:w-[250px] rounded-md bg-cover bg-center">
