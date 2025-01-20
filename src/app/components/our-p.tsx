@@ -1,225 +1,119 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import Link from "next/link";
+import Modal from "./Modal";
+
+// Define types for the data
+interface BlogData {
+  title: string;
+  imageUrl: string;
+  _id: string;
+  price: number;
+  description: string;
+}
+
 export default function OurProducts() {
-    return (
-      <div
-        className={`font-inter flex w-full flex-col gap-y-[74px] pt-4 py-32 capitalize tracking-[0px] text-indigo-950 `}
-      >
-        <div className="flex items-center justify-center pr-px">
-          <div className="text-center text-[32px] font-semibold leading-[1.1]">
-            Our Products
-          </div>
-        </div>
-        <div className="flex flex-grow flex-wrap items-center justify-center gap-x-4 gap-y-6 leading-[1.3] min-[1910px]:flex-nowrap">
-          {/* Product 1 */}
-          <Link href={'../detail'}>
-          <div className="flex flex-col items-start gap-y-3.5 self-stretch">
-            <div className="bg-image h-80 w-80 flex-shrink-0 rounded-md bg-cover bg-center relative ">
-              <div className="rounded bg-green-600 px-2.5 py-1.5 text-center text-[13px] font-medium leading-[1.1] text-white absolute top-4 left-4">
-                New
-              </div>
-              <img
-                src="/img/p1.png"
-                alt="Library Stool Chair"
-                className="h-[312px] w-[312px] object-cover"
-              />
-            </div>
-            <div className="flex items-center justify-center gap-x-32">
-              <div className="flex flex-grow flex-col items-start gap-y-2.5 [max-width:256px]">
-                <div className="self-stretch text-[teal]">Library Stool Chair</div>
-                <div className="text-lg font-semibold leading-[1.1] text-indigo-950">
-                  $20
-                </div>
-              </div>
-              <div className="flex h-11 w-11 flex-shrink-0 flex-col items-center justify-center rounded-lg bg-[cadetblue] p-2.5">
-              <Image src={'/img/cart.png'} width={24} height={24} alt=""/>
-              </div>
-            </div>
-          </div></Link>
-  
-          {/* Product 2 */}
-          <Link href={'../detail'}>
-          <div className="flex flex-col items-start gap-y-3.5 self-stretch">
-            <div className="bg-image h-80 w-80 flex-shrink-0 rounded-[10px] bg-cover bg-center relative">
-              <div className="rounded bg-orange-500 px-2.5 py-1.5 text-center text-[13px] font-medium leading-[1.1] text-white absolute top-4 left-4 ">
-                Sales
-              </div>
-              <img
-                src="/img/p2.png"
-                alt="Library Stool Chair"
-                className="h-[312px] w-[312px] object-cover"
-              />
-            </div>
-            <div className="flex items-center justify-center gap-x-32">
-              <div className="flex flex-grow flex-col items-start gap-y-2.5 text-indigo-950 [max-width:256px]">
-                <div className="self-stretch">Library Stool Chair</div>
-                <div className="flex items-center gap-x-1 leading-[1.1]">
-                  <div className="text-lg font-semibold leading-[1.1]">$20</div>
-                  <div className="text-sm leading-[1.1] text-zinc-400 line-through">
-                    $39
-                  </div>
-                </div>
-              </div>
-              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-gray-100 p-[11px]">
-              <Image src={'/img/cart.png'} width={24} height={24} alt=""/>
-              </div>
-            </div>
-          </div></Link>
-  
-          {/* Product 3 */}
-          <Link href={'../detail'}>
-          <div className="flex flex-col items-start gap-y-3.5 self-stretch">
-            <div className="bg-image h-80 w-80 flex-shrink-0 rounded-md bg-cover bg-center">
-              <img
-                src="/img/p3.png"
-                alt="Library Stool Chair"
-                className="h-[312px] w-[312px]  object-cover"
-              />
-            </div>
-            <div className="flex items-center justify-center gap-x-32">
-              <div className="flex flex-grow flex-col items-start gap-y-2.5 text-indigo-950 [max-width:256px]">
-                <div className="self-stretch">Library Stool Chair</div>
-                <div className="flex items-center gap-x-1 leading-[1.1]">
-                  <div className="text-lg font-semibold leading-[1.1]">$20</div>
-                 
-                </div>
-              </div>
-              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-gray-100 p-[11px]">
-              <Image src={'/img/cart.png'} width={24} height={24} alt=""/>
-              </div>
-            </div>
-          </div></Link>
-  
-          {/* Product 4 */}
-          <Link href={'../detail'}>
-          <div className="flex flex-col items-start gap-y-3.5 self-stretch">
-            <div className="bg-image h-80 w-80 flex-shrink-0 rounded-md bg-cover bg-center">
-              <img
-                src="/img/p4.png"
-                alt="Library Stool Chair"
-                className="h-[312px] w-[312px] object-cover"
-              />
-            </div>
-            <div className="flex items-center justify-center gap-x-32">
-              <div className="flex flex-grow flex-col items-start gap-y-2.5 text-indigo-950 [max-width:256px]">
-                <div className="self-stretch">Library Stool Chair</div>
-                <div className="flex items-center gap-x-1 leading-[1.1]">
-                  <div className="text-lg font-semibold leading-[1.1]">$20</div>
-                  
-                </div>
-              </div>
-              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-gray-100 p-[11px]">
-              <Image src={'/img/cart.png'} width={24} height={24} alt=""/>
-              </div>
-            </div>
-          </div></Link>
-        </div>
-        <div className="flex flex-grow flex-wrap items-center justify-center gap-x-4 gap-y-6 leading-[1.3] min-[1910px]:flex-nowrap">
-          {/* Product 1 */}
-          <Link href={'../detail'}>
-          <div className="flex flex-col items-start gap-y-3.5 self-stretch">
-            <div className="bg-image h-80 w-80 flex-shrink-0 rounded-md bg-cover bg-center relative ">
-              <div className="rounded bg-green-600 px-2.5 py-1.5 text-center text-[13px] font-medium leading-[1.1] text-white absolute top-4 left-4">
-                New
-              </div>
-              <img
-                src="/img/top1.png"
-                alt="Library Stool Chair"
-                className="h-[312px] w-[312px] object-cover"
-              />
-            </div>
-            <div className="flex items-center justify-center gap-x-32">
-              <div className="flex flex-grow flex-col items-start gap-y-2.5 [max-width:256px]">
-                <div className="self-stretch text-[teal]">Library Stool Chair</div>
-                <div className="text-lg font-semibold leading-[1.1] text-indigo-950">
-                  $20
-                </div>
-              </div>
-              <div className="flex h-11 w-11 flex-shrink-0 flex-col items-center justify-center rounded-lg bg-[cadetblue] p-2.5">
-              <Image src={'/img/cart.png'} width={24} height={24} alt=""/>
-              </div>
-            </div>
-          </div></Link>
-  
-          {/* Product 2 */}
-          <Link href={'../detail'}>
-          <div className="flex flex-col items-start gap-y-3.5 self-stretch">
-            <div className="bg-image h-80 w-80 flex-shrink-0 rounded-[10px] bg-cover bg-center relative">
-              <div className="rounded bg-orange-500 px-2.5 py-1.5 text-center text-[13px] font-medium leading-[1.1] text-white absolute top-4 left-4 ">
-                Sales
-              </div>
-              <img
-                src="/img/item4.png"
-                alt="Library Stool Chair"
-                className="h-[312px] w-[312px] object-cover"
-              />
-            </div>
-            <div className="flex items-center justify-center gap-x-32">
-              <div className="flex flex-grow flex-col items-start gap-y-2.5 text-indigo-950 [max-width:256px]">
-                <div className="self-stretch">Library Stool Chair</div>
-                <div className="flex items-center gap-x-1 leading-[1.1]">
-                  <div className="text-lg font-semibold leading-[1.1]">$20</div>
-                  <div className="text-sm leading-[1.1] text-zinc-400 line-through">
-                    $39
-                  </div>
-                </div>
-              </div>
-              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-gray-100 p-[11px]">
-              <Image src={'/img/cart.png'} width={24} height={24} alt=""/>
-              </div>
-            </div>
-          </div></Link>
-  
-          {/* Product 3 */}
-          <Link href={'../detail'}>
-          <div className="flex flex-col items-start gap-y-3.5 self-stretch">
-            <div className="bg-image h-80 w-80 flex-shrink-0 rounded-md bg-cover bg-center">
-              <img
-                src="/img/p5.png"
-                alt="Library Stool Chair"
-                className="h-[312px] w-[312px]  object-cover"
-              />
-            </div>
-            <div className="flex items-center justify-center gap-x-32">
-              <div className="flex flex-grow flex-col items-start gap-y-2.5 text-indigo-950 [max-width:256px]">
-                <div className="self-stretch">Library Stool Chair</div>
-                <div className="flex items-center gap-x-1 leading-[1.1]">
-                  <div className="text-lg font-semibold leading-[1.1]">$20</div>
-                 
-                </div>
-              </div>
-              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-gray-100 p-[11px]">
-              <Image src={'/img/cart.png'} width={24} height={24} alt=""/>
-              </div>
-            </div>
-          </div></Link>
-  
-          {/* Product 4 */}
-          <Link href={'../detail'}>
-          <div className="flex flex-col items-start gap-y-3.5 self-stretch">
-            <div className="bg-image h-80 w-80 flex-shrink-0 rounded-md bg-cover bg-center">
-              <img
-                src="/img/p1.png"
-                alt="Library Stool Chair"
-                className="h-[312px] w-[312px] object-cover"
-              />
-            </div>
-            <div className="flex items-center justify-center gap-x-32">
-              <div className="flex flex-grow flex-col items-start gap-y-2.5 text-indigo-950 [max-width:256px]">
-                <div className="self-stretch">Library Stool Chair</div>
-                <div className="flex items-center gap-x-1 leading-[1.1]">
-                  <div className="text-lg font-semibold leading-[1.1]">$20</div>
-                  
-                </div>
-              </div>
-              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-gray-100 p-[11px]">
-              <Image src={'/img/cart.png'} width={24} height={24} alt=""/>
-              </div>
-            </div>
-          </div></Link>
+  const [data, setData] = useState<BlogData[]>([]);
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+
+  // Fetch data on component mount
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await client.fetch(`*[_type == 'products']{
+          title,
+          price,
+          inventory,
+          _id,
+          "imageUrl": image.asset->url,
+          description,
+        }`);
+        setData(result); // Store the fetched data in state
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleAddToCart = (product: BlogData) => {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const existingItem = cart.find((item: any) => item._id === product._id);
+
+    if (existingItem) {
+      // Update quantity if item already exists
+      existingItem.quantity += 1;
+    } else {
+      // Add new item to the cart
+      cart.push({ ...product, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+        // Show modal with a message
+        setModalMessage(`${product.title} has been added to your cart.`);
+        setShowModal(true); // Show the modal
+      };
+    
+      const closeModal = () => {
+        setShowModal(false); 
+  };
+
+  return (
+    <div
+      className={`font-inter flex w-full flex-col gap-y-[74px] pt-4 py-32 capitalize tracking-[0px] text-indigo-950`}
+    >
+      <div className="flex items-center justify-center pr-px">
+        <div className="text-center text-[32px] font-semibold leading-[1.1]">
+          Our Products
         </div>
       </div>
-    );
-  }
-  
-  
+
+      <div className="flex flex-grow flex-wrap items-center justify-center gap-x-4 gap-y-6 leading-[1.3] min-[1910px]:flex-nowrap">
+        {data.slice(0, 8).map((val, i) => (
+          <div key={val._id}className="flex flex-col items-start gap-y-3.5 self-stretch">
+            {/* Product Image and Details */}
+            <Link
+              href={`../details/${val._id}`}
+              className="bg-image h-80 w-80 flex-shrink-0 rounded-md bg-cover bg-center relative"
+            >
+              <img
+                src={val.imageUrl}
+                alt={val.title}
+                className="h-[312px] w-[312px] object-cover rounded-md"
+              />
+            </Link>
+
+            {/* Product Title, Price, and Add to Cart Button */}
+            <div className="flex items-center justify-between w-full">
+              <div className="flex flex-col">
+                <div className="text-[teal]">{val.title}</div>
+                <div className="text-lg font-semibold text-indigo-950">
+                  ${val.price}
+                </div>
+              </div>
+              <button
+                onClick={() => handleAddToCart(val)}
+                className="flex h-11 w-11 items-center justify-center rounded-lg bg-[cadetblue] p-2.5 hover:bg-teal-500"
+              >
+                <Image
+                  src={"/img/cart.png"}
+                  width={24}
+                  height={24}
+                  alt="Add to cart"
+                />
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+      {showModal && (
+        <Modal message={modalMessage} onClose={closeModal} />
+      )}
+    </div>
+  );
+}

@@ -68,7 +68,7 @@ export default function Navigation() {
               <div className="relative z-0 flex h-2.5 w-2.5 items-center pl-1">
                 <div className="absolute bottom-[-5px] right-[-7px] top-[-5px] z-0 w-5 rounded-full bg-indigo-500"></div>
                 <div className="font-dm-sans z-[2] text-[10px] leading-none text-white">
-                  2
+              
                 </div>
               </div>
             </div>
@@ -79,19 +79,19 @@ export default function Navigation() {
       {/* Links and Contact */}
       <div className="flex flex-wrap items-center justify-between px-6 py-[20px] text-sm font-medium leading-[1.1] text-zinc-500 sm:px-10 lg:px-32 lg:py-[30px]">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-8">
-          <div className="text-[teal]">
+          <div className="hover:text-[teal] hover:font-bold">
             <Link href="/">Home</Link>
           </div>
-          <div>
+          <div className="hover:text-[teal] hover:font-bold">
             <Link href="../product">Product</Link>
           </div>
-          <div>
+          <div className="hover:text-[teal] hover:font-bold">
             <Link href="../contact">Contact Us</Link>
           </div>
-          <div>
+          <div className="hover:text-[teal] hover:font-bold">
             <Link href="../about">About</Link>
           </div>
-          <div>
+          <div className="hover:text-[teal] hover:font-bold">
             <Link href="../faq">FAQ</Link>
           </div>
         </div>

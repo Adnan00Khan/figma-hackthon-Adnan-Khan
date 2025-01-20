@@ -1,73 +1,66 @@
-export default {
-    name: 'product',
-    type: 'document',
-    title: 'Product',
-    fields: [
-      {
-        name: 'name',
-        type: 'string',
-        title: 'Product Name',
+import { defineType } from "sanity";
+
+export const productSchema = defineType({
+  name: "products",
+  title: "Products",
+  type: "document",
+  fields: [
+    {
+      name: "title",
+      title: "Product Title",
+      type: "string",
+    },
+    {
+      name: "price",
+      title: "Price",
+      type: "number",
+    },
+    {
+      title: "Price without Discount",
+      name: "priceWithoutDiscount",
+      type: "number",
+    },
+    {
+      name: "badge",
+      title: "Badge",
+      type: "string",
+    },
+    {
+      name: "image",
+      title: "Product Image",
+      type: "image",
+    },
+    {
+      name: "category",
+      title: "Category",
+      type: "reference",
+      to: [{ type: "categories" }],
+    },
+    {
+      name: "description",
+      title: "Product Description",
+      type: "text",
+    },
+    {
+      name: "inventory",
+      title: "Inventory Management",
+      type: "number",
+    },
+    {
+      name: "tags",
+      title: "Tags",
+      type: "array",
+      of: [{ type: "string" }],
+      options: {
+        list: [
+          { title: "Featured", value: "featured" },
+          {
+            title: "Follow products and discounts on Instagram",
+            value: "instagram",
+          },
+          { title: "Gallery", value: "gallery" },
+        ],
       },
-      {
-        name: 'description',
-        type: 'string',
-        title: 'Description'
-      },
-      {
-        name: 'price',
-        type: 'number',
-        title: 'Product Price',
-      },
-      {
-        name: 'discountPercentage',
-        type: 'number',
-        title: 'Discount Percentage',
-      },
-      {
-        name: 'priceWithoutDiscount',
-        type: 'number',
-        title: 'Price Without Discount',
-        description: 'Original price before discount'
-      },
-      {
-        name:'rating',
-        type:'number',
-        title:'Rating',
-        description:'Rating of the product'
-      },
-      {
-        name: 'ratingCount',
-        type: 'number',
-        title: 'Rating Count',
-        description: 'Number of ratings'
-      },
-      {
-        name: 'tags',
-        type: 'array',
-        title: 'Tags',
-        of: [{ type: 'string' }],
-        options: {
-          layout: 'tags'
-        },
-        description: 'Add tags like "new arrival", "bestseller", etc.'
-      },
-      {
-        name: 'sizes',
-        type: 'array',
-        title: 'Sizes',
-        of: [{ type: 'string' }],
-        options: {
-          layout: 'tags'
-        },
-        description: 'Add sizes like S , M , L , XL , XXL'
-      },
-      {
-        name: 'image',
-        type: 'image',
-        title: 'Product Image',
-        options: {
-          hotspot: true // Enables cropping and focal point selection
-        }
-      }
-    ]
-  };
+    },
+  ],
+});
