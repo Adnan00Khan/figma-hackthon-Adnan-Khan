@@ -5,23 +5,17 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Modal from "../components/Modal";
 
-interface BlogDetail {
-  title: string;
-  imageUrl: string;
-  _id: string;
-  price: number;
-  description: string;
-}
 
-interface DetailProps {
-  data: BlogDetail;
-}
+
 interface BlogData {
   title: string;
   imageUrl: string;
   _id: string;
   price: number;
   description: string;
+}
+interface DetailProps {
+  data: BlogData;
 }
 
 const Detail: React.FC<DetailProps> = ({ data }) => {
@@ -53,7 +47,7 @@ const Detail: React.FC<DetailProps> = ({ data }) => {
   // Add to Cart Functionality
   const handleAddToCart = (product: BlogData) => {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    const existingItem = cart.find((item: BlogDetail) => item._id === product._id);
+    const existingItem = cart.find((item: BlogData) => item._id === product._id);
 
     if (existingItem) {
       // Update quantity if item already exists

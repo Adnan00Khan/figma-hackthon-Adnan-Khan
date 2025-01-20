@@ -5,7 +5,7 @@ import { client } from '@/sanity/lib/client';
 import React, { useEffect, useState } from 'react';
 
 
-interface BlogDetail {
+interface BlogData {
   title: string;
   imageUrl: string;
   _id: string;
@@ -20,17 +20,17 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = ({ params }) => {
-  const [data, setData] = useState<BlogDetail | null>(null);
+  const [data, setData] = useState<BlogData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [slug, setSlug] = useState<string | null>(null);
 
   useEffect(() => {
-    const unwrapParams = async () => {
-      const resolvedParams = await params;
-      setSlug(resolvedParams._id); // Set the slug after unwrapping
+    const getSlug = async () => {
+      const unwrappedParams = await params;
+      setSlug(unwrappedParams._id); // Set the slug after unwrapping
     };
 
-    unwrapParams();
+    getSlug();
   }, [params]);
 
   useEffect(() => {
@@ -48,6 +48,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
           }[0]`,
           { id: slug }
         );
+        
         setData(result);
       } catch (error) {
         console.error('Error fetching product details:', error);
