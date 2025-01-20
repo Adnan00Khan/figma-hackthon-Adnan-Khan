@@ -8,6 +8,7 @@ interface BlogData {
   _id: string;
   price: number;
   description: string;
+  quantity:number;
 }
 
 type CartItem = BlogData & { quantity: number };
@@ -21,7 +22,7 @@ export default function Frame() {
       try {
         const parsedCart = JSON.parse(storedCart);
         // Ensure no duplicates and validate cart
-        if (Array.isArray(parsedCart) && parsedCart.every((item: any) => item._id && item.price && item.quantity >= 1)) {
+        if (Array.isArray(parsedCart) && parsedCart.every((item: BlogData) => item._id && item.price && item.quantity >= 1)) {
           setCartItems(parsedCart);
         }
       } catch (error) {
