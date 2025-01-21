@@ -126,9 +126,9 @@ export default function Frame() {
               <span>Total</span>
               <span className="font-medium">${total.toFixed(2)}</span>
             </div>
-            <button className="rounded-[30px] bg-[#1eabb0] px-12 py-[18px] text-center text-[15px] font-medium leading-6 text-white">
+            <Link href="../checkout"><button className="rounded-[30px] bg-[#1eabb0] px-12 py-[18px] text-center text-[15px] font-medium leading-6 text-white">
               Member Checkout
-            </button>
+            </button></Link>
           </div>
         </div>
       </div>
