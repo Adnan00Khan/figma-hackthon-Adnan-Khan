@@ -4,26 +4,12 @@ import Detail from '@/app/detail/page';
 import { client } from '@/sanity/lib/client';
 import React, { use, useEffect, useState } from 'react';
 
-interface BlogData {
-  title: string;
-  imageUrl: string;
-  _id: string;
-  price: number;
-  description: string;
-}
-
-interface PageProps {
-  params: Promise<{
-    _id: string;
-  }>;
-}
-
-const Page: React.FC<PageProps> = ({ params }) => {
+const Page = ({ params }) => {
   const unwrappedParams = use(params); // Use the `use` hook to unwrap the Promise
   const { _id } = unwrappedParams;
 
-  const [data, setData] = useState<BlogData | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {

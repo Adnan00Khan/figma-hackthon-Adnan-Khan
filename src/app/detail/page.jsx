@@ -5,21 +5,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Modal from "../components/Modal";
 
-
-
-interface BlogData {
-  title: string;
-  imageUrl: string;
-  _id: string;
-  price: number;
-  description: string;
-}
-interface DetailProps {
-  data: BlogData;
-}
-
-const Detail: React.FC<DetailProps> = ({ data }) => {
-  const [data1, setData] = useState<BlogData[]>([]);
+const Detail = ({ data }) => {
+  const [data1, setData] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
 
@@ -45,9 +32,9 @@ const Detail: React.FC<DetailProps> = ({ data }) => {
   }, []);
 
   // Add to Cart Functionality
-  const handleAddToCart = (product: BlogData) => {
+  const handleAddToCart = (product) => {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    const existingItem = cart.find((item: BlogData) => item._id === product._id);
+    const existingItem = cart.find((item) => item._id === product._id);
 
     if (existingItem) {
       // Update quantity if item already exists
@@ -58,15 +45,14 @@ const Detail: React.FC<DetailProps> = ({ data }) => {
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-        // Show modal with a message
-        setModalMessage(`${product.title} has been added to your cart.`);
-        setShowModal(true); // Show the modal
-      };
-    
-      const closeModal = () => {
-        setShowModal(false); 
+    // Show modal with a message
+    setModalMessage(`${product.title} has been added to your cart.`);
+    setShowModal(true); // Show the modal
   };
 
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <div className="flex w-full flex-col px-6 py-12 md:px-28">
